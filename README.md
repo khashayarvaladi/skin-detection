@@ -1,11 +1,5 @@
 # skin-detection
 
-Wie Sie wissen, liegt der Farbbereich menschlicher Hauttypen im RGB-Farbbereich.
-In diesem Projekt wird der Bayesian Classifier verwendet und auf unseren Daten werden Single-Gauß- und Multi-Gauß-Algorithmen implementiert.
-Normalerweise berechnen wir p(skin|RGB), um mithilfe eines Schwellenwerts zu entscheiden, ob es sich bei dem Pixel um ein Skin-Pixel handelt oder nicht. Wir benötigen also nicht die genaue Wahrscheinlichkeit von p(skin|RGB) I, sondern können stattdessen eine Schätzung wie q(skin|RGB) haben, sodass, wenn p(skin|RGB)>Schwelle, dann q(skin |RGB)>Schwelle und Laster. Wenn wir eine solche Näherung berechnen können, werden die Ergebnisse ähnlich sein.
-
-
-q(skin∣RGB)>Schwelle.
 
 
 In diesem Projekt wird ein Bayesscher Klassifikator zur Hauterkennung im RGB-Farbraum verwendet. Dabei kommen sowohl der Single-Gauss- als auch der Multi-Gauss-Ansatz zur Anwendung.
@@ -54,3 +48,44 @@ Schwelle
 q(skin∣RGB)>Schwelle gilt.
 
 Diese Näherung erlaubt eine effizientere Verarbeitung, ohne die Klassifikationsergebnisse wesentlich zu beeinträchtigen.
+
+
+This project uses a Bayesian classifier to detect human skin pixels in the RGB color space. Both single-Gaussian and multi-Gaussian approaches are implemented.
+
+The goal is to estimate the probability 
+𝑝
+(
+skin
+∣
+RGB
+)
+p(skin∣RGB) based on a pixel's RGB values, and to decide whether it represents skin using a defined threshold.
+
+Instead of computing the exact probability, an approximation 
+𝑞
+(
+skin
+∣
+RGB
+)
+q(skin∣RGB) can be used, as long as the condition 
+𝑝
+(
+skin
+∣
+RGB
+)
+>
+threshold
+⇒
+𝑞
+(
+skin
+∣
+RGB
+)
+>
+threshold
+p(skin∣RGB)>threshold⇒q(skin∣RGB)>threshold holds.
+
+This allows for more efficient processing while maintaining comparable classification results.
